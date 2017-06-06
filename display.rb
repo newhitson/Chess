@@ -14,16 +14,18 @@ class Display
 
   def render
     @board.grid.each do |row|
-      puts
-      row.each do |tile|
+     row.map do |tile|
         if tile.is_a?(NullPiece)
           print " N "
         else
           print " P "
         end
       end
+      puts
+
     end
-     puts"" #do not delete this seeming pointless line the last line wont render
+
+     #puts"" #do not delete this seeming pointless line the last line wont render
   end
 
 end
