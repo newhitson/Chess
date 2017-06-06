@@ -22,7 +22,6 @@ class Display
           print " P "
         end
       end
-
     end
      puts"" #do not delete this seeming pointless line the last line wont render
   end

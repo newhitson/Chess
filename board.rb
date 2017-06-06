@@ -16,11 +16,8 @@ class Board
           make_board[idx1][idx2] = Piece.new
         end
       end
-      make_board
     end
-
-
-
+    make_board
   end
 
 
@@ -45,9 +42,9 @@ class Board
   #   @grid[x][y]
   # end
   #
-  # def []=(pos, value)
+  # def []=(pos, piece)
   #   x,y = pos
-  #   @grid[x][y] = value
+  #   @grid[x][y] = piece
   # end
 
 
