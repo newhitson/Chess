@@ -83,11 +83,21 @@ class Cursor
       Process.exit(0)
     else
       update_pos(MOVES[key])
-      return nil
+      #return nil
     end
   end
 
   def update_pos(diff)
-    @cursor_pos = [cursor_pos[0] + diff[0], cursor_pos[1] + diff[1]]
+    new_pos = [cursor_pos[0] + diff[0], cursor_pos[1] + diff[1]]
+    if @board.in_bounds(new_pos)
+      @cursor_pos = new_pos
+    end
+
   end
 end
+=begin
+ load 'board.rb'
+ load 'display.rb'
+ b = Board.new
+ d = Display.new(b)
+=end

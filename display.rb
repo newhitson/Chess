@@ -12,20 +12,26 @@ class Display
   def move(new_pos)
   end
 
+  def temp_play
+    while 1 < 2
+      render
+      @cursor.get_input
+    end
+  end
+
   def render
-    @board.grid.each do |row|
-     row.map do |tile|
+    system("clear")
+    @board.grid.each_with_index do |row, idx1|
+      row.each_with_index do |tile, idx2|
         if tile.is_a?(NullPiece)
-          print " N "
+          [idx1, idx2] == @cursor.cursor_pos ? (print " N ".colorize(:background => :yellow, :color => :red)) : (print " N ".colorize(:red))
         else
-          print " P "
+          [idx1, idx2] == @cursor.cursor_pos ? (print " P ".colorize(:yellow)) : (print " P ".colorize(:blue))
         end
       end
-      puts
-
+      puts ""
     end
-
-     #puts"" #do not delete this seeming pointless line the last line wont render
+    nil
   end
 
 end
